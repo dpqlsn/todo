@@ -1,7 +1,10 @@
+import { useState } from "react";
 import "../App.css";
 import Todoitem from './Todoitems';
 
 const List = () => {
+    const [search, setSearch] = useState(""); 
+
     const dummyTodos = [
         {
         id: 1,
@@ -23,12 +26,19 @@ const List = () => {
         }
     ];
 
+    const filteredTodos = dummyTodos.filter((todo) =>
+        todo.content.toLowerCase().includes(search.toLowerCase()));
+
     return (
         <div className="List">
         <h4> Todo List 🌱</h4>
-        <input placeholder="검색어를 입력하세요" />
+        <input
+            placeholder="검색어를 입력하세요"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+        />
         <div className="todos_wrapper">
-            {dummyTodos.map((todo) => (
+            {filteredTodos.map((todo) => (
             <Todoitem
                 key={todo.id}
                 content={todo.content}
