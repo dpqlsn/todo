@@ -1,13 +1,14 @@
-import React from 'react';
-import '../App.css';
+import React from "react";
 
-const Todoitems = ({ content, date, isDone }) => {
+const Todoitems = ({ id, content, date, isDone, onUpdate, onDelete }) => {
     return (
-    <div className="TodoItem">
-        <input type="checkbox" defaultChecked={isDone} />
-        <div className="content">{content}</div>
-        <div className="date">{date}</div>
-        <button>삭제</button>
+        <div className="Todoitem">
+        <input type="checkbox" onChange={() => onUpdate(id)} />
+        <span>{content}</span>
+        <span style={{ marginLeft: "10px", fontSize: "0.9em", color: "#888" }}>
+            {date}
+        </span>
+        <button onClick={() => onDelete(id)}>삭제</button>
         </div>
     );
 };
