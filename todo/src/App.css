@@ -1,5 +1,20 @@
-.Header > h1{
-  color: rgb(37,147,255);
+.App {
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: 'Arial', sans-serif;
+}
+
+.Header > h1 {
+  color: #2593ff;
+  font-size: 32px;
+  margin: 0;
+}
+
+.Header > h2 {
+  margin: 0;
 }
 
 .Editor {
@@ -8,9 +23,9 @@
 }
 
 .Editor input {
-  flex: 1 ;
+  flex: 1;
   padding: 15px;
-  border : 1px solid rgb(220,220,220);
+  border: 1px solid rgb(220, 220, 220);
   border-radius: 5px;
 }
 
@@ -18,8 +33,64 @@
   cursor: pointer;
   width: 80px;
   border: none;
-  background-color:  rgb(37,147,255);
-  color: white;
+  background-color: #2593ff;
+  color: #fff;
   border-radius: 5px;
 }
 
+.List {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.List > input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgb(220, 220, 220);
+  padding: 15px 0;
+}
+
+.List > input:focus {
+  outline: none;
+  border-bottom: 1px solid #2593ff;
+}
+
+.List .todos_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.TodoItems {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.TodoItems input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+.TodoItems .content {
+  flex: 1;
+  font-size: 16px;
+}
+
+.TodoItems .date {
+  font-size: 14px;
+  color: gray;
+}
+
+.TodoItems button {
+  cursor: pointer;
+  color: gray;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+}
